@@ -16,15 +16,17 @@ class BotM:
 	def __init__ (self, client):
 	        self.client = client
 
-	def start_message_flood (self, login):
+	def start_message_flood (self, login, delay):
     		mes = ''
     		for i in range (11): mes += str (randint (0, 1000000))*i
     		while True:
         	   try:
              		if login is not 'all': 
  			     self.client.SendMessage (login, mes)
+			     sleep (delay)
 			else: 
 			     for i in self.client.Friends: self.client.SendMessage (i.Handle)
+			     sleep (delay)
 	    		print YES + 'Flood Sent'
                    except KeyboardInterrupt:
             		opt (self.client)
