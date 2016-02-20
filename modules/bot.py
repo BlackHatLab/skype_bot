@@ -49,10 +49,9 @@ class BotM:
 				sleep (delay)
 				call.Finish ()
 	    	        	print YES + 'Called Sent to ' + i.Handle
-        	    except Exception as e:
-            		if e == KeyboardInterrupt:
-				 opt (self.client)
-            			 break
+        	    except KeyboardInterrupt:
+			    opt (self.client)
+			    break
 
 	def show_friend_list (self):
 		print INFO + 'Found ' + str (len (self.client.Friends)) + ' friends! Friend List: '
@@ -63,11 +62,12 @@ class BotM:
 	def start_auto_answering_machine (self, wav_file):
 		self.wf = wav_file
 		self.client.OnCallStatus = self.OnCall
-		while True: pass	
+		while True:
+		   pass	
 	
 	def OnCall(self, call, status):
      		if status == Skype4Py.clsRinging and call.Type.startswith('INCOMING'):
-      			print 'Incoming call from:', call.PartnerHandle 
+      			print INFO + 'Incoming call from: ' +  call.PartnerHandle 
       			sleep(1)
         		try:
           			call.Answer()
@@ -75,5 +75,5 @@ class BotM:
           		 	pass
 
      		if status == Skype4Py.clsInProgress:
-      			print ' playing ' + self.wf
+      			print INFO + 'Playing ' + self.wf
       			call.InputDevice(Skype4Py.callIoDeviceTypeFile, self.wf)

@@ -1,3 +1,5 @@
+# coding: utf8
+
 import Skype4Py
 from sys import path
 import os
@@ -6,6 +8,7 @@ path.append (os.path.realpath (os.path.dirname (__file__)) + '/modules/')
 
 import bot
 from output import *
+import webbrowser
 
 options = [
    'Skype Message Flood',
@@ -15,6 +18,28 @@ options = [
 ]
 
 def show_banner (cl=None):
+
+    print Fore.CYAN + '''
+    ╔══╦╗╔══╦╗╔╦═══╦═══╗
+    ║╔═╣║║╔═╣║║║╔═╗║╔══╝
+    ║╚═╣╚╝║─║╚╝║╚═╝║╚══╗
+    ╚═╗║╔╗║─╚═╗║╔══╣╔══╝
+    ╔═╝║║║╚═╗╔╝║║──║╚══╗
+    ╚══╩╝╚══╝╚═╩╝──╚═══╝
+    ╔══╗╔══╦════╗
+    ║╔╗║║╔╗╠═╗╔═╝
+    ║╚╝╚╣║║║─║║
+    ║╔═╗║║║║─║║
+    ║╚═╝║╚╝║─║║
+    ╚═══╩══╝─╚╝
+    ''' + Fore.RESET
+    print Fore.RED + '[DEVELOPER]' + Fore.RESET + ' DOCTOR_RABB'
+    print Fore.CYAN + '[VERSION]' + Fore.RESET + ' 0.15f'
+
+    print INFO + 'EVIL-HACK.US' + INFO
+    
+    if raw_input ('Do you want to visit evil-hack.us? (y/n): ') == 'y': webbrowser.open ('http://evil-hack.us/')
+
     print '*'*70
     print ' '*15 + 'Your Name: ' + cl.CurrentUser.FullName + ' '*15
     print ' '*15 + 'Your Status: ' + cl.CurrentUserStatus + ' '*15
