@@ -36,7 +36,7 @@ def show_banner (cl=None):
     print Fore.RED + '[DEVELOPER]' + Fore.RESET + ' DOCTOR_RABB'
     print Fore.CYAN + '[VERSION]' + Fore.RESET + ' 0.15f'
 
-    print INFO + 'EVIL-HACK.US' + INFO
+    print INFO + 'EVIL-HACK.US ' + INFO
     
     if raw_input ('Do you want to visit evil-hack.us? (y/n): ') == 'y': webbrowser.open ('http://evil-hack.us/')
 
