@@ -1,5 +1,5 @@
 <center>This is</center><h1>SkypeBot!</h1>
-<img src="http://cdn.macrumors.com/article-new/2014/10/878510_larger.png?thumbretina"></img>
+<img src="http://cs408521.vk.me/v408521865/a765/xLyacPi4arU.jpg"></img>
 
 <h2>How to install?</h2>
   1. If you have Unix-family system, then run "setup.sh". If you have NT, then run "windows_setup.cmd"
