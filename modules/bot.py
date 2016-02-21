@@ -1,3 +1,6 @@
+# BlackHat Lab 2013-2016
+
+
 from sys import path
 import os
 from random import randint
@@ -15,9 +18,15 @@ from output import *
 class BotM:
 	
 	def __init__ (self, client):
+		'''
+		Class initialize
+		'''
 	        self.client = client
 
 	def start_message_flood (self, login, mes, delay):
+		'''
+		This function starts message flood
+		'''
     		mes = mes
     		while True:
 		   if mes == '':
@@ -36,6 +45,9 @@ class BotM:
              		break
 
 	def start_call_flood (self, login, delay):
+		'''
+		This function starts call flood
+		'''
     		while True:
         	    try:
 			if login != 'all':
@@ -54,18 +66,23 @@ class BotM:
 			    break
 
 	def show_friend_list (self):
+		'''
+		This function show your friend list
+		'''
 		print INFO + 'Found ' + str (len (self.client.Friends)) + ' friends! Friend List: '
 		for i in self.client.Friends:
 	     		print YES + 'Name: ' + i.FullName + '\n' + YES + 'Login: ' + i.Handle + '\n\n'
   		opt (self.client)
 
 	def start_auto_answering_machine (self, wav_file):
+		'''
+		Function for auto answering
+		'''
 		self.wf = wav_file
 		self.client.OnCallStatus = self.OnCall
 		while True:
 		   pass	
 	
-	# Dont touch this!!!!
 	
 	def OnCall(self, call, status):
      		if status == Skype4Py.clsRinging and call.Type.startswith('INCOMING'):
