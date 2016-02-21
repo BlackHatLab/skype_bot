@@ -7,7 +7,7 @@
 
 This guy can:
   1. Flood your friend (or all friends from your contact list) or enemy using message-sending
-  2. Flood your friend or enemy using calling
+  2. Flood your friend or enemy (or all people from your contact list) using calling
   3. Auto Answering System
   4. Show your friend list
   5. Show your chat list
