@@ -1,3 +1,5 @@
+# This module contains "color themes" for console output
+
 from colorama import Fore, init
 
 init ()
