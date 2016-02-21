@@ -1,4 +1,4 @@
-This is <h1>SkypeBot!</h1>
+///////////// This is \\\\\\\\\\\\\ <h1>SkypeBot!</h1>
 
 <h2>How to install?</h2>
   1. If you have Unix-family system, then run "setup.sh". If you have NT, then run "windows_setup.cmd"
