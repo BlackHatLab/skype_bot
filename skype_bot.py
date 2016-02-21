@@ -1,3 +1,6 @@
+# This file starts SkypeBot
+
+
 # coding: utf8
 
 import Skype4Py
