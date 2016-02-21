@@ -1,5 +1,5 @@
 <center>This is</center><h1>SkypeBot!</h1>
-<img src="https://yandex.ru/images/search?text=skype.png&img_url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2F8%2F8c%2FSkype-icon.png&pos=0&rpt=simage&_=1456040304291"></img>
+<img src="http://distancelearningstrategies.com/wp-content/uploads/2013/02/Skype-icon.png"></img>
 
 <h2>How to install?</h2>
   1. If you have Unix-family system, then run "setup.sh". If you have NT, then run "windows_setup.cmd"
