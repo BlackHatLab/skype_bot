@@ -48,7 +48,7 @@ class BotM:
 				call = self.client.PlaceCall (i.Handle)
 				sleep (delay)
 				call.Finish ()
-	    	        	print YES + 'Called Sent to ' + i.Handle
+	    	        	print YES + 'Called to ' + i.Handle
         	    except KeyboardInterrupt:
 			    opt (self.client)
 			    break
@@ -64,6 +64,8 @@ class BotM:
 		self.client.OnCallStatus = self.OnCall
 		while True:
 		   pass	
+	
+	# Dont touch this!!!!
 	
 	def OnCall(self, call, status):
      		if status == Skype4Py.clsRinging and call.Type.startswith('INCOMING'):
