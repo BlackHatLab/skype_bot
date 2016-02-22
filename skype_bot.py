@@ -14,7 +14,10 @@ options = [
    'Skype Message Flood',
    'Skype Call Flood',
    'Show Friend List',
-   'Start Auto Answering Machine'
+   'Start Auto Answering Machine',
+   'Show Chat List',
+   'Search for Users',
+   'Auto Discall'
 ]
 
 def show_banner (cl=None):
@@ -66,13 +69,18 @@ def opt (cl=None):
         client.show_friend_list ()
     elif cmd == '3':
 	client.start_auto_answering_machine (raw_input (INFO + 'Wav File for playing: '))
+    elif cmd == '4':
+	client.show_chats ()
+    elif cmd == '5':
+	client.find_users (raw_input (INFO + 'User login: '))
+    elif cmd == '6':
+	client.start_auto_stop_call (raw_input (INFO + 'Message (can be null): '))
     else:
         print ERR + 'Option not found!'
 	opt (cl=cl)
 
 def main ():
 
-    #global cl
     cl = Skype4Py.Skype ()
 
     if not cl.Client.IsRunning:
