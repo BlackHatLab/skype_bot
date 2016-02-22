@@ -17,7 +17,8 @@ options = [
    'Start Auto Answering Machine',
    'Show Chat List',
    'Search for Users',
-   'Auto Discall'
+   'Auto Discall',
+   'Show Avalible Smiles'
 ]
 
 def show_banner (cl=None):
@@ -62,7 +63,7 @@ def opt (cl=None):
     if cmd == '99':
         exit ()
     elif cmd == '0':
-        client.start_message_flood (raw_input (INFO + 'Target\'s login ("all" to circulate by friend list): '), raw_input (INFO + 'Message (null to random messages): '), int (raw_input (INFO + 'Delay: ')))
+        client.start_message_flood (raw_input (INFO + 'Target\'s login ("all" to circulate by friend list): '), raw_input (INFO + 'Message (null to random messages or smile): '), int (raw_input (INFO + 'Delay: ')))
     elif cmd == '1':
         client.start_call_flood (raw_input (INFO + 'Target\'s login ("all" to circulate by friend list): '), int (raw_input (INFO + 'Delay: ')))
     elif cmd == '2':
@@ -74,7 +75,9 @@ def opt (cl=None):
     elif cmd == '5':
 	client.find_users (raw_input (INFO + 'User login: '))
     elif cmd == '6':
-	client.start_auto_stop_call (raw_input (INFO + 'Message (can be null): '))
+	client.start_auto_stop_call (raw_input (INFO + 'Message (can be null or smile): '))
+    elif cmd == '7':
+	client.show_smiles ()
     else:
         print ERR + 'Option not found!'
 	opt (cl=cl)

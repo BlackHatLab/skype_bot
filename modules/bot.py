@@ -1,3 +1,9 @@
+# coding: utf8
+
+# BlackHat Lab 2013-2016
+# Main module
+
+
 from sys import path
 import os
 from random import randint
@@ -14,16 +20,30 @@ from output import *
 
 class BotM:
 	
+
+	smiles = [
+	   '✞', '☯', '✝', '☭', '卐', '✇', '©', '™', '➉', '⅝'
+	]
+
 	def __init__ (self, client):
 	        self.client = client
-
+        
+	def show_smiles (self):
+		for i in range (len (self.smiles)):
+		     print self.smiles [i] + ' id ' + str (i)
+		opt (self.client) 	
+	
 	def start_message_flood (self, login, mes, delay):
-    		mes = mes
     		while True:
 		   if mes == '':
 			 for i in range (11): mes += str (randint (0, 1000000))*i
         	   try:
-             			if login != 'all': 
+             			if login != 'all':
+					try:
+					     if mes.split (':')[0] == 'smile': mes = self.smiles [int (mes.split (':')[1])]
+					except Exception as e:
+					     print e
+					     exit ()
  			     		self.client.SendMessage (login, mes)
 			     		sleep (delay)
 		             		print YES + 'Message Sent to ' + login
@@ -52,21 +72,26 @@ class BotM:
 			  	  if e == KeyboardInterrupt:
 					 opt (self.client)
 			  	  else: pass
+    		
 
 	def show_friend_list (self):
+		'''
+		This function show your friend list
+		'''
 		print INFO + 'Found ' + str (len (self.client.Friends)) + ' friends! Friend List: '
 		for i in self.client.Friends:
 	     		print YES + 'Name: ' + i.FullName + '\n' + YES + 'Login: ' + i.Handle + '\n\n'
   		opt (self.client)
 
 	def start_auto_answering_machine (self, wav_file):
+		'''
+		Function for auto answering
+		'''
 		self.wf = wav_file
 		self.client.OnCallStatus = self.OnCall
 		while True:
-		   pass	
+		     pass	
 	
-
-	# Dont touch this function!
 	def OnCall(self, call, status):
      		if status == Skype4Py.clsRinging and call.Type.startswith('INCOMING'):
       			print INFO + 'Incoming call from: ' +  call.PartnerHandle 
@@ -90,6 +115,7 @@ class BotM:
 		opt (self.client)
 
 	def find_users (self, text):
+		users = self.client.SearchForUsers (text)
 		print INFO + 'Found ' + str (len (users)) + ' users! User list: '
 		for i in users:
 			print '	   ' + YES + 'User Login: ' + i.Handle
@@ -107,6 +133,10 @@ class BotM:
 		print INFO + 'Auto Discalling Started'
 		if mes != '': self.discall_message = mes
 		end = False
+		try:
+                         if mes.split (':')[0] == 'smile': mes = self.smiles [int (mes.split (':')[1])]
+                except Exception as e:
+                         pass
 		try:
 			while not end:
 		    		pass
